@@ -1,5 +1,7 @@
 package Adaptor;
 
+import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 
 import Domain.FoodDomain;
 import edu.northesatern.food_order_system.R;
+import edu.northesatern.food_order_system.ShowDetailActivity;
 
 public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHolder> {
     ArrayList<FoodDomain> popularFood;
@@ -36,6 +39,15 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.ViewHold
 
         int drawableResourceId=holder.itemView.getContext().getResources().getIdentifier(popularFood.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
         Glide.with(holder.itemView.getContext()).load(drawableResourceId).into(holder.pic);
+
+        holder.addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
+                intent.putExtra("object", popularFood.get(position));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
