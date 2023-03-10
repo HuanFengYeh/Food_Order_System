@@ -8,9 +8,7 @@ A Full-Stack food order mobile app for browsing and creating the order and is wr
 
 HomePage, OrderDetialPage, CheckoutPage
 
-<img src="./screenshots/homepage.png" width="50%" height="50%" />
-<img src="./screenshots/detailpage.png" width="50%" height="50%" />
-<img src="./screenshots/checkoutpage.png" width="50%" height="50%" />
+<img src="./screenshots/homepage.png" width="20%" height="20%" />！<img src="./screenshots/detailpage.png" width="21%" height="21%" />！<img src="./screenshots/checkoutpage.png" width="20.5%" height="20.5%" />
 
 --------
 ## Build/Run
