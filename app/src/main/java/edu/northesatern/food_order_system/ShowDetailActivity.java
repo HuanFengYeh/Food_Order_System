@@ -3,6 +3,7 @@ package edu.northesatern.food_order_system;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -54,7 +55,7 @@ public class ShowDetailActivity extends AppCompatActivity {
         minusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numberOrder -= 1;
+                numberOrder = (numberOrder > 0) ? numberOrder - 1 : 0;
                 numberOrderTxt.setText(String.valueOf(numberOrder));
             }
         });
@@ -64,6 +65,7 @@ public class ShowDetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 object.setNumberInCart(numberOrder);
                 managementCart.insertFood(object);
+                startActivity(new Intent(ShowDetailActivity.this, MainActivity.class));
             }
         });
     }
